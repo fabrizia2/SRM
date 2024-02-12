@@ -29,7 +29,8 @@
   h1 {
     position: relative;
     z-index: 1;
-    font-size: 6rem;
+    margin-top: 90px;
+    font-size: 5.5rem;
     background: url('https://getwallpapers.com/wallpaper/full/c/a/9/332879.jpg') repeat;
     background-size: cover;
     -webkit-text-fill-color: transparent;
@@ -203,6 +204,7 @@
 
   .text-lg {
     color: #0a0a0a;
+    font-size: 1.125rem;
   }
 
   a {
