@@ -61,6 +61,7 @@
   .container-flex {
     display: flex;
     width: 100%;
+    overflow: hidden;
 }
 
 .images-container {
@@ -71,9 +72,11 @@
     gap: -5rem; /* Add gap between grid items */
     width: 60%; /* Adjust container width */
     align-items: flex-start;
+    overflow: hidden;
 }
 
 .images-container img{
+    overflow: hidden;
     border-radius: 0.5rem;
     width: 75%; /* Adjust width to fill grid item */
     height: auto; /* Maintain aspect ratio */
