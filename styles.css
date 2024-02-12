@@ -1,6 +1,110 @@
 /* styles.css */
+.header {
+    position: relative;
+    background-color: rgba(250, 247, 247, 0.8); /* Fallback background color */
+    background-image: url('Images/ab17.png'), url('Images/ab27.png'), url('Images/ab8.png');
+    background-position: left, center, right;
+    background-repeat: no-repeat;
+    background-size: 20%, 36%, 19%;
+    padding: 20px;
+    border-radius: 20px;
+    border: #131314 1px solid;
+    box-shadow: #0c0c0c 0px 10px 20px;
+    text-align: center;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+.glitter-container {
+    position: relative;
+    z-index: 2; /* Ensure it's above the background images */
+}
+  .container {
+    position: relative;
+  }
+  
+  h1 {
+    position: relative;
+    z-index: 1;
+    font-size: 6rem;
+    background: url('https://getwallpapers.com/wallpaper/full/c/a/9/332879.jpg') repeat;
+    background-size: cover;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-weight: 900;
+    
+  }
+  
+  @keyframes shine {
+    to {
+      background-position: right bottom;
+    }
+  }
+  
+  .container {
+    position: relative; /* Ensure z-index works correctly */
+  }
+  
 .container {
     max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .container-flex {
+    display: flex;
+    width: 100%;
+}
+
+.images-container {
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Change to 2 columns */
+    grid-auto-rows: auto;
+    gap: -5rem; /* Add gap between grid items */
+    width: 60%; /* Adjust container width */
+    align-items: flex-start;
+}
+
+.images-container img{
+    border-radius: 0.5rem;
+    width: 75%; /* Adjust width to fill grid item */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Prevent image from stretching */
+    gap: 1rem; /* Add gap between grid items */
+}
+
+.images-container2 {
+    flex: 2;
+    display: flex;
+    margin: auto 10px;
+    grid-template-columns: repeat(3, 1fr); /* Change to 2 columns */
+    grid-auto-rows: auto;
+    gap: -5rem; /* Add gap between grid items */
+    width: 60%; /* Adjust container width */
+    align-items: center;
+}
+
+.images-container2 img{
+    border-radius: 0.5rem;
+    width: 25%; /* Adjust width to fill grid item */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Prevent image from stretching */
+    gap: 3rem; /* Add gap between grid items */ 
+    margin-right: 3%;
+}
+
+  
+  .containeri {
+    display: flex;
+    flex: 1;
+    width: 50%;
     margin-left: auto;
     margin-right: auto;
     padding-left: 15px;
@@ -115,9 +219,6 @@
     margin-left: 5px;
   }
 
-  .images {
-    position: relative;
-  }
   .slideshow-container {
     position: relative;
     margin-left: auto;
@@ -131,7 +232,7 @@
   .slide {
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
   }
 
   .slideshow-controls {
@@ -140,7 +241,7 @@
     transform: translateY(-50%);
     display: flex;
     justify-content: space-between;
-    width: 67%;
+    width: 32%;
   }
   
   .slideshow-controls button {
@@ -162,4 +263,22 @@
     font-size: 1.5rem;
   }
   
+  .donate-btn {
+    background-color: #0a0a0a;
+    text-align: center;
+    justify-content: center;
+    color: #edf2f7;
+    padding: 1rem 1.3rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+    .donate-btn:hover {
+        background-color: #f8f8fa;
+        color: #0a0a0a;
+        border: #070708 1px solid;
+    }
   

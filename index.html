@@ -11,11 +11,13 @@
 </head>
 <body>
 
-<header class="bg-gray-800 text-white py-4">
-  <div class="container mx-auto">
-    <h1 class="text-3xl font-semibold">Glamour Glow Kenya</h1>
-  </div>
-</header>
+<header class="header">
+    <div class="container">
+        <div class="glitter-container">
+        <h1 class="">Glamour Glow Kenya</h1>
+        </div>
+    </div>
+</header>     
 
 <section class="bg-gray-900 text-white py-16">
     <div class="container1 mx-auto text-center">
@@ -26,7 +28,7 @@
           </video>
       </div>
     </div>
-  </section>
+</section>
   
 
 <section class="bg-gray-200 py-8">
@@ -34,43 +36,89 @@
     <p class="text-lg">
       Your small write-up goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     </p>
+    <button class="donate-btn">DONATE</button>
   </div>
 </section>
 
-<section class="py-16 relative">
-    <div class="container mx-auto relative">
-        <div class="slideshow-container relative">
-            <img id="currentSlide" src="Images/fav6.jpg" alt="Slide 1" class="mx-auto mb-8 rounded-lg shadow-lg opacity-100 slide">
-            <!-- Add more images as needed -->
+<section class="py-16">
+    <div class="container-flex">
+        <div class="containeri">
+            <div class="slideshow-container relative">
+                <img id="currentSlide" src="Images/fav6.jpg" alt="Slide 1" class="mx-auto mb-8 rounded-lg shadow-lg opacity-100 slide">
+                <!-- Add more images as needed -->
+            </div>
         </div>
-        <div class="slideshow-controls">
-            <button onclick="prevSlide()">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button onclick="nextSlide()">
-                <i class="fas fa-chevron-right"></i>
-            </button>
+        <div class="images-container">
+            <!-- Add your four images here -->
+            <img src="Images/fav13.jpg" alt="Image 1">
+            <img src="Images/fav16.jpg" alt="Image 2">
+            <img src="Images/fav17.jpg" alt="Image 3">
+            <img src="Images/re13.jpg" style="height: 90%; margin-top: 8px;" alt="Image 4">
+            <img src="Images/fav4.jpg" style="margin-top: 8px;" alt="Image 5">
+            <img src="Images/re16.jpg" style="height: 90%; margin-top: 8px;" alt="Image 6">
         </div>
     </div>
 </section>
- 
-  <footer class="text-white py-4">
+
+
+
+
+<section class="bg-gray-200 py-8">
     <div class="container mx-auto text-center">
-      <p>&copy; 2024 Solid Rock Media. All rights reserved.</p>
-      <div class="mt-4">
-        <a href="#" class="text-gray-400 hover:text-white mx-2"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="text-gray-400 hover:text-white mx-2"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="text-gray-400 hover:text-white mx-2"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="text-gray-400 hover:text-white mx-2"><i class="fab fa-tiktok"></i></a>
-        <a href="#" class="text-gray-400 hover:text-white mx-2"><i class="fab fa-whatsapp"></i></a>
-        <!-- Add more social media icons as needed -->
+      <p class="text-lg">
+        Your small write-up goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+      <button class="donate-btn">DONATE</button>
+    </div>
+</section>
+
+<section class="bg-gray-900 text-white py-16">
+    <div class="container1 mx-auto text-center">
+      <div class="aspect-w-16 aspect-h-9">
+          <video class="w-full h-full" controls>
+              <source src="https://www.tiktok.com/@realuncle_d/video/7334634024134118661?is_from_webapp=1&sender_device=pc&web_id=7296532376233313798" type="video/mp4">
+              Your browser does not support the video tag.
+          </video>
       </div>
     </div>
-  </footer>
+
+    <div class="images-container2">
+        <!-- Add your four images here -->
+        <img src="Images/ab7 (1).jpg" style="height: 280px;" alt="Image 1">
+        <img src="Images/fav19.jpg" alt="Image 3">
+        <img src="Images/fav2.jpg" alt="Image 4">
+        <img src="Images/ab2.jpg" style="height: 280px;" alt="Image 2">
+        <img src="Images/fav9.jpg" style="height: 280px;" alt="Image 5">
+        <img src="Images/fav15.jpg" alt="Image 6">
+    </div>
+</section>
+
+<section class="bg-gray-200 py-8">
+    <div class="container mx-auto text-center">
+      <p class="text-lg">
+        Your small write-up goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+      <button class="donate-btn">DONATE</button>
+    </div>
+</section>
+ 
+<footer class="text-white py-4">
+    <div class="container mx-auto text-center">
+        <p>&copy; 2024 Solid Rock Media. All rights reserved.</p>
+        <div class="mt-4">
+            <a href="#" class="text-gray-400 hover:text-white mx-2"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white mx-2"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white mx-2"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white mx-2"><i class="fab fa-tiktok"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white mx-2"><i class="fab fa-whatsapp"></i></a>
+            <!-- Add more social media icons as needed -->
+        </div>
+    </div>
+</footer>
   
-  <script>
+<script>
     let slideIndex = 0;
-    const slides = ["Images/fav1.jpg", "Images/fav2.jpg", "Images/fav3.jpg", "Images/fav4.jpg", "Images/fav5.jpg","Images/fav6.jpg", "Images/fav7.jpg", "Images/fav8.jpg", "Images/fav9.jpg", "Images/fav10.jpg"]; // Add more image URLs as needed
+    const slides = ["Images/fav1.jpg", "Images/fav2.jpg", "Images/fav3.jpg", "Images/fav4.jpg", "Images/fav5.jpg", "Images/fav6.jpg", "Images/fav7.jpg", "Images/fav8.jpg", "Images/fav9.jpg", "Images/fav10.jpg"]; // Add more image URLs as needed
 
     function showSlide(n) {
     slideIndex += n;
@@ -87,9 +135,11 @@
     showSlide(1);
     }
 
+    // Auto-navigate the slideshow every 3 seconds (adjust as needed)
+    setInterval(nextSlide, 3500);
+
     // Show the initial slide
     showSlide(slideIndex);
-
 
   </script>
   
