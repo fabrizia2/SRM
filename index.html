@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Single Page Site</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="bg-gray-800 text-white py-4">
+  <div class="container mx-auto">
+    <h1 class="text-3xl font-semibold">Your Website Name</h1>
+  </div>
+</header>
+
+<section class="bg-gray-900 text-white py-16">
+  <div class="container mx-auto text-center">
+    <h2 class="text-4xl font-bold mb-4">Welcome to Your Website</h2>
+    <div class="aspect-w-16 aspect-h-9">
+      <iframe class="w-full h-full" src="https://www.youtube.com/embed/your-video-id" title="YouTube video player" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="bg-gray-200 py-8">
+  <div class="container mx-auto text-center">
+    <p class="text-lg">
+      Your small write-up goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </p>
+  </div>
+</section>
+
+<section class="py-16 relative">
+    <div class="container mx-auto relative">
+      <div class="slideshow-container">
+        <img src="fav5.jpg" alt="Slide 1" class="mx-auto mb-8 rounded-lg shadow-lg opacity-100 slide">
+        <!-- Add more images as needed -->
+      </div>
+      <div class="absolute inset-y-0 left-0 flex items-center justify-center">
+        <button class="bg-gray-800 text-white px-4 py-2 rounded-l-lg opacity-50 hover:opacity-100 transition duration-300 ease-in-out" onclick="prevSlide()">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="bg-gray-800 text-white px-4 py-2 rounded-r-lg opacity-50 hover:opacity-100 transition duration-300 ease-in-out" onclick="nextSlide()">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+  
+  <footer class="bg-gray-800 text-white py-4">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024 Your Website. All rights reserved.</p>
+      <div class="mt-4">
+        <a href="#" class="text-gray-400 hover:text-white mx-2"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-gray-400 hover:text-white mx-2"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-gray-400 hover:text-white mx-2"><i class="fab fa-instagram"></i></a>
+        <!-- Add more social media icons as needed -->
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+  
+    function showSlide(n) {
+      slides.forEach(slide => slide.style.opacity = "0");
+      currentSlide = (n + totalSlides) % totalSlides;
+      slides[currentSlide].style.opacity = "1";
+    }
+  
+    function prevSlide() {
+      showSlide(currentSlide - 1);
+    }
+  
+    function nextSlide() {
+      showSlide(currentSlide + 1);
+    }
+  
+    setInterval(nextSlide, 5000); // Change slide every 5 seconds
+  </script>
+  
+  </body>
+  </html>
