@@ -32,14 +32,21 @@
     z-index: 1;
     margin-top: 15%;
     font-size: 5rem;
-    background: url('https://getwallpapers.com/wallpaper/full/c/a/9/332879.jpg') repeat;
+    color: transparent;
+    background: url('https://cdn.wallpapersafari.com/58/86/IF0B7m.jpg') repeat;
     background-size: cover;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
     font-weight: 900;
-    
-  }
+    text-shadow: 
+        0px 0px 5px rgba(255, 215, 0, 0.2), /* Main gold shadow */
+        3px 3px 0 rgba(255, 215, 0, 0.4), /* Glitter effect */
+        4px 4px 0 rgba(255, 215, 0, 0.4), /* Glitter effect */
+        4px 4px 0 rgba(255, 215, 0, 0.5), /* Glitter effect */
+        0 0 25px rgba(255, 215, 0, 0.5); /* Glitter effect */
+}
+
   
   @keyframes shine {
     to {
