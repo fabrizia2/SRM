@@ -2,10 +2,10 @@
 .header {
     position: relative;
     background-color: rgba(250, 247, 247, 0.8); /* Fallback background color */
-    background-image: url('Images/ab17.png'), url('Images/ab27.png'), url('Images/top3.png');
+    background-image: url('Images/top12.png'), url('Images/ab27.png'), url('Images/top3.png');
     background-position: left, center, right;
     background-repeat: no-repeat;
-    background-size: 17%, 36%, 17%;
+    background-size: 30%, 36%, 17%;
     padding: 20px;
     border-radius: 20px;
     border: #131314 1px solid;
@@ -36,6 +36,16 @@
     font-weight: 900;
     text-shadow: #080808 4px 0px 7px;
     text-decoration: none; /* Remove default text-decoration */
+}
+
+h1::before {
+  content: "";
+  position: absolute;
+  top: 50%; /* Adjust the vertical position of the line */
+  left: 0;
+  width: 100%;
+  height: 1px; /* Adjust the thickness of the line */
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0)); /* Gradient for the strike-through line */
 }
 
   
@@ -131,7 +141,7 @@
     grid-template-columns: repeat(3, 1fr); /* Change to 2 columns */
     grid-auto-rows: auto;
     gap: -5rem; /* Add gap between grid items */
-    width: 60%; /* Adjust container width */
+    width: 64%; /* Adjust container width */
     align-items: center;
 }
 
