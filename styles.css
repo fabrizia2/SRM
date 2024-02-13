@@ -26,8 +26,20 @@
   .container {
     position: relative;
   }
-  
+
   h1 {
+    position: relative;
+    z-index: 1;
+    font-size: 5.5rem;
+    color: white;
+    background-size: cover;
+    font-weight: 900;
+    text-shadow: #080808 4px 0px 7px;
+    text-decoration: none; /* Remove default text-decoration */
+}
+
+  
+  /*h1 {
     position: relative;
     z-index: 1;
     font-size: 5.5rem;
@@ -39,12 +51,12 @@
     background-clip: text;
     font-weight: 900;
     text-shadow: 
-        0px 0px 5px rgba(255, 215, 0, 0.10), /* Main gold shadow */
-        3px 3px 0 rgba(255, 215, 0, 0.4), /* Glitter effect */
-        4px 4px 0 rgba(255, 215, 0, 0.4), /* Glitter effect */
-        4px 4px 0 rgba(255, 215, 0, 0.4), /* Glitter effect */
-        0 0 25px rgba(255, 215, 0, 0.4); /* Glitter effect */
-}
+        0px 0px 5px rgba(255, 215, 0, 0.5), /* Main gold shadow *
+        3px 3px 0 rgba(255, 215, 0, 0.4), /* Glitter effect *
+        4px 4px 0 rgba(255, 215, 0, 0.4), /* Glitter effect *
+        4px 4px 0 rgba(255, 215, 0, 0.4), /* Glitter effect *
+        0 0 25px rgba(255, 215, 0, 0.4); /* Glitter effect *
+}*/
 
   
   @keyframes shine {
