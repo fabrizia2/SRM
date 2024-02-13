@@ -5,7 +5,7 @@
     background-image: url('Images/ab17.png'), url('Images/ab27.png'), url('Images/ab8.png');
     background-position: left, center, right;
     background-repeat: no-repeat;
-    background-size: 20%, 36%, 19%;
+    background-size: 17%, 36%, 17%;
     padding: 20px;
     border-radius: 20px;
     border: #131314 1px solid;
@@ -30,8 +30,7 @@
   h1 {
     position: relative;
     z-index: 1;
-    margin-top: 15%;
-    font-size: 5rem;
+    font-size: 5.5rem;
     color: transparent;
     background: url('https://cdn.wallpapersafari.com/58/86/IF0B7m.jpg') repeat;
     background-size: cover;
@@ -53,6 +52,18 @@
       background-position: right bottom;
     }
   }
+
+  @media screen and (max-width: 768px) {
+    h1 {
+        font-size: 3.5rem; /* Adjust font size for smaller screens */
+    }
+}
+
+@media screen and (min-width: 1024px) {
+  h1 {
+      top: 70px; /* Adjust the position of the text without changing header height */
+  }
+}
   
   .container {
     position: relative; /* Ensure z-index works correctly */
@@ -68,7 +79,7 @@
 
   .containerh {
     max-width: 960px;
-    max-height: 100px;
+    
     margin-left: auto;
     margin-right: auto;
     padding-left: 15px;
