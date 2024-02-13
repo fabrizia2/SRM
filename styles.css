@@ -338,3 +338,35 @@ h1::before {
         border: #070708 1px solid;
     }
   
+
+    .shimmer {
+      animation: shimmer 2s infinite;
+    }
+    
+    .shimmer::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -100%;
+      width: 100%;
+      height: 10%;
+      background: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(255, 215, 0, 0.9) 50%,
+        transparent 100%
+      );
+      animation: shinelight 5s infinite;
+    }
+    
+    @keyframes shimmer {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    @keyframes shinelight {
+      0% { left: -150%; }
+      50% { left: 150%; }
+      100% { left: -150%; }
+    }
