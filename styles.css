@@ -141,7 +141,7 @@ h1::before {
     grid-template-columns: repeat(3, 1fr); /* Change to 2 columns */
     grid-auto-rows: auto;
     gap: -5rem; /* Add gap between grid items */
-    width: 64%; /* Adjust container width */
+    width: 60%; /* Adjust container width */
     align-items: center;
 }
 
