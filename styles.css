@@ -79,6 +79,13 @@
     h1 {
         font-size: 3.5rem; /* Adjust font size for smaller screens */
     }
+
+    .logos {
+      display: none;
+    }
+    .long {
+      height: 15px;
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -86,7 +93,9 @@
       top: 70px; /* Adjust the position of the text without changing header height */
   }
 }
-  
+  .long {
+    height: 270px;
+  }
   .container {
     position: relative; /* Ensure z-index works correctly */
   }
@@ -152,6 +161,36 @@
     object-fit: cover; /* Prevent image from stretching */
     gap: 3rem; /* Add gap between grid items */ 
     margin-right: 3%;
+}
+
+.logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.logoi {
+  text-align: center; /* Center align image and button */
+  margin-bottom: 20px; /* Add space between each item */
+  flex: 0 0 calc(15% - 20px); /* Set width for each item (4 items per row) */
+}
+
+.logoi img {
+  width: 100%; /* Ensure image fills its container */
+  max-width: 100px; /* Limit image width */
+  justify-content: space-around;
+  margin-bottom: 15px;
+}
+
+a {
+  text-decoration: none; /* Remove default underline */
+  color: #0a0a0a; /* Set link color */
+}
+
+@media screen and (max-width: 600px) {
+  .logoi {
+    flex: 0 0 calc(50% - 20px); /* Set width for each item (2 items per row) */
+  }
 }
 
   
@@ -339,7 +378,7 @@
         border: #070708 1px solid;
     }
 
-   /* .shimmer::after {
+    /* .shimmer::after {
       content: '';
       position: absolute;
       top: 0;
@@ -371,5 +410,5 @@
       100% {
           transform: translateX(100%); /* Move completely off-screen *
       }
-  }
-  */
+  }*/
+  
