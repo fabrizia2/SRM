@@ -19,6 +19,94 @@
     z-index: 1;
 }
 
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+/* Category Grid */
+.category-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+  gap: 15px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Individual Category Card */
+.category {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.category:hover {
+  transform: scale(1.05);
+  box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Category Image */
+.category img {
+  width: 100%;
+  height: 150px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Category Name */
+.category a, .category p {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  margin-top: 5px;
+}
+
+/* View Button */
+.view-btn {
+  background-color: #0a0a0a;
+  color: #edf2f7;
+  padding: 1rem 1.3rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  display: block;
+  width: 200px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .category-list {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .category a, .category p  {
+    font-size: 13px;
+  }
+
+  .category img {
+    height: 120px;
+  }
+
+  .view-btn {
+    font-size: 18px;
+    width: 180px;
+  }
+}
+
+
 .glitter-container {
     position: relative;
     z-index: 2; /* Ensure it's above the background images */
@@ -372,7 +460,9 @@ a {
     transition: background-color 0.3s ease-in-out;
   }
 
-    .donate-btn:hover {
+ 
+
+    .donate-btn:hover, .view-btn:hover {
         background-color: #f8f8fa;
         color: #0a0a0a;
         border: #070708 1px solid;
