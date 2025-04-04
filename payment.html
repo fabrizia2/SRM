@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Payment | Glamour Glow</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-pink-50 min-h-screen flex items-center justify-center px-4 py-10 relative">
+
+  <!-- Back arrow -->
+  <a href="tickets.html" class="absolute top-4 left-4 text-pink-600 hover:text-pink-800 text-xl sm:text-2xl font-bold">
+    ← Tickets
+  </a>
+
+  <!-- Payment Form -->
+  <div class="bg-white rounded-2xl shadow-xl w-full max-w-md p-6 sm:p-8 space-y-6">
+    <h2 class="text-center text-2xl sm:text-3xl font-bold text-gray-800">🎉 Complete Your Purchase</h2>
+
+    <!-- M-Pesa Instructions -->
+    <div class="text-center text-sm sm:text-base text-pink-600">
+      <p class="mb-2">Send payment to <strong id="mpesaNumberDisplay">0715 892 787</strong> via M-Pesa</p>
+      <button onclick="copyNumber()" class="text-xs sm:text-sm bg-pink-600 text-white px-3 py-1 rounded hover:bg-pink-700 transition">
+        Copy Number
+      </button>
+      <span id="copiedMessage" class="ml-2 text-green-600 text-xs hidden">Copied!</span>
+    </div>
+
+    <!-- Form -->
+    <form id="paymentForm" method="POST" class="space-y-4 text-sm sm:text-base">
+      <div>
+        <label class="block font-medium text-gray-700">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required
+          class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-pink-400 focus:outline-none" />
+      </div>
+
+      <div>
+        <label class="block font-medium text-gray-700">Ticket Type</label>
+        <input type="text" id="ticketType" name="ticketType" readonly
+          class="w-full bg-gray-100 border border-gray-300 rounded-lg px-4 py-2" />
+      </div>
+
+      <div>
+        <label class="block font-medium text-gray-700">Number of Tickets</label>
+        <input type="number" id="quantity" name="quantity" value="1" min="1"
+          class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-pink-400 focus:outline-none" required />
+      </div>
+
+      <div>
+        <label class="block font-medium text-gray-700">Total (Ksh)</label>
+        <input type="text" id="total" name="total" readonly
+          class="w-full bg-gray-100 border border-gray-300 rounded-lg px-4 py-2" />
+      </div>
+
+      <div>
+        <label class="block font-medium text-gray-700">Phone Number Used for M-Pesa</label>
+        <input type="tel" id="mpesaNumber" name="mpesaNumber" placeholder="07XX XXX XXX" pattern="07\d{8}"
+          class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-pink-400 focus:outline-none" required />
+      </div>
+
+      <button type="submit"
+        class="w-full bg-pink-600 text-white py-3 rounded-xl font-bold hover:bg-pink-700 transition">
+        Confirm Payment
+      </button>
+    </form>
+  </div>
+
+  <!-- Confirmation Message -->
+  <div id="confirmation" class="hidden absolute inset-0 bg-white bg-opacity-95 flex flex-col items-center justify-center text-center px-4 sm:px-6">
+    <h2 class="text-3xl font-bold text-gray-800 mb-4">🎉 Thank You!</h2>
+    <p id="confirmMessage" class="text-lg text-gray-700 mb-6 leading-relaxed"></p>
+    <a href="index.html" class="text-pink-600 font-semibold hover:underline">← Back to Home</a>
+  </div>
+
+  <!-- Script -->
+  <script>
+    const ticketPrices = {
+      Single: 1500,
+      Couples: 2500,
+      GroupOfFive: 5000
+    };
+
+    const ticketType = localStorage.getItem("selectedTicket") || "Regular";
+    const ticketInput = document.getElementById("ticketType");
+    const quantityInput = document.getElementById("quantity");
+    const totalInput = document.getElementById("total");
+
+    ticketInput.value = ticketType;
+    totalInput.value = ticketPrices[ticketType] || 0;
+
+    quantityInput.addEventListener("input", () => {
+      const qty = parseInt(quantityInput.value) || 1;
+      totalInput.value = qty * (ticketPrices[ticketType] || 0);
+    });
+
+    document.getElementById("paymentForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const qty = quantityInput.value;
+      const total = totalInput.value;
+      const mpesaNumber = document.getElementById("mpesaNumber").value.trim();
+
+      if (!/^07\d{8}$/.test(mpesaNumber)) {
+        alert("Please enter a valid M-Pesa phone number (e.g. 0712345678).");
+        return;
+      }
+
+      // Show confirmation
+      document.getElementById("paymentForm").classList.add("hidden");
+      const msg = `Hi ${name}, we’ve received your request for ${qty} ${ticketType} ticket(s) totaling Ksh ${total}. We'll verify your payment from ${mpesaNumber} and send your ticket(s) shortly. Welcome to GlamourGlow 💖`;
+      document.getElementById("confirmMessage").innerText = msg;
+      document.getElementById("confirmation").classList.remove("hidden");
+
+      localStorage.removeItem("selectedTicket");
+    });
+
+    function copyNumber() {
+      const number = document.getElementById("mpesaNumberDisplay").innerText;
+      navigator.clipboard.writeText(number).then(() => {
+        const copiedMsg = document.getElementById("copiedMessage");
+        copiedMsg.classList.remove("hidden");
+        setTimeout(() => copiedMsg.classList.add("hidden"), 2000);
+      });
+    }
+  </script>
+
+</body>
+</html>

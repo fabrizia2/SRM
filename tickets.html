@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tickets | Glamour Glow</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="bg-pink-50 font-sans text-gray-800 relative">
+
+  <!-- Home Link -->
+  <a href="index.html" class="absolute top-4 left-4 sm:top-6 sm:left-6 text-pink-600 hover:text-pink-800 text-2xl sm:text-3xl font-bold z-10">
+    ← Home
+  </a>
+
+  <!-- Tickets Section -->
+  <section class="text-center py-12 px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4" data-aos="fade-down">🎟 Choose Your Ticket</h2>
+    <p class="max-w-2xl mx-auto text-base sm:text-lg text-gray-600 mb-10" data-aos="fade-up">
+      Whether you're alone, with your special someone, or your group of friends, we’ve got you covered.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
+      
+      <!-- Single Ticket -->
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-xl overflow-hidden transition-all duration-300 hover:scale-[1.03]" data-aos="zoom-in">
+        <img src="images/tic1.jpg" alt="Single Ticket" class="w-full h-48 sm:h-56 object-cover">
+        <div class="p-5 sm:p-6">
+          <h3 class="text-lg sm:text-xl font-semibold mb-3">Single Ticket - Ksh 1500</h3>
+          <p class="text-gray-700 mb-4">Entry for 1 person</p>
+          <button onclick="buyTicket('Single')" class="w-full sm:w-auto bg-pink-500 text-white px-6 py-2 rounded-lg hover:bg-pink-600 transition">
+            Buy Now
+          </button>
+        </div>
+      </div>
+
+      <!-- Couples Ticket -->
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-xl overflow-hidden transition-all duration-300 hover:scale-[1.03]" data-aos="zoom-in" data-aos-delay="100">
+        <img src="images/tic2.jpg" alt="Couples Ticket" class="w-full h-48 sm:h-56 object-cover">
+        <div class="p-5 sm:p-6">
+          <h3 class="text-lg sm:text-xl font-semibold mb-3">Couples Ticket - Ksh 2500</h3>
+          <p class="text-gray-700 mb-4">Entry for 2 people</p>
+          <button onclick="buyTicket('Couples')" class="w-full sm:w-auto bg-pink-500 text-white px-6 py-2 rounded-lg hover:bg-pink-600 transition">
+            Buy Now
+          </button>
+        </div>
+      </div>
+
+      <!-- Group Ticket -->
+      <div class="bg-white rounded-2xl shadow-md hover:shadow-xl overflow-hidden transition-all duration-300 hover:scale-[1.03]" data-aos="zoom-in" data-aos-delay="200">
+        <img src="images/tic3.jpg" alt="Group Ticket" class="w-full h-48 sm:h-56 object-cover">
+        <div class="p-5 sm:p-6">
+          <h3 class="text-lg sm:text-xl font-semibold mb-3">Group Of Five - Ksh 5000</h3>
+          <p class="text-gray-700 mb-4">Entry for 5 people</p>
+          <button onclick="buyTicket('GroupOfFive')" class="w-full sm:w-auto bg-pink-500 text-white px-6 py-2 rounded-lg hover:bg-pink-600 transition">
+            Buy Now
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+
+    function buyTicket(type) {
+      localStorage.setItem("selectedTicket", type);
+      window.location.href = "payment.html";
+    }
+  </script>
+
+</body>
+</html>
